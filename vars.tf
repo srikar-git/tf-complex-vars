@@ -90,6 +90,11 @@ variable "docker_ports" {
       internal = 8300
       external = 8300
       protocol = "tcp"
+    },
+    {
+      internal = 8301
+      external = 8301
+      protocol = "ldp"
     }
   ]
 }
@@ -158,7 +163,7 @@ variable "nested_complex" {
         vals = ["ls -la", "echo that was the list", "ls -lrt",]
         other = {
           "random" = {
-            name = "what"
+            name = "whatever"
             val = 6
           },
         }
