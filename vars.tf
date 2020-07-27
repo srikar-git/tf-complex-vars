@@ -1,5 +1,11 @@
 # Configure these variables
 
+
+variable "nested_list_set" {
+  type    = list(set(number))
+  default = [[5,6],[5,6],3,]
+}
+
 variable "sample_var" {
   description = "A sample var to pass to the template."
   default     = "hello"
@@ -125,12 +131,6 @@ variable "simple_set" {
 
 variable "nested_set" {
   type    = set(list(number))
-  default = [[5,6],[5,6],[3,],]
-}
-
-
-variable "nested_list_set" {
-  type    = list(set(number))
   default = [[5,6],[5,6],[3,],]
 }
 
