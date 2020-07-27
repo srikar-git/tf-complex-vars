@@ -76,7 +76,7 @@ variable "map_simple_string" {
 
 variable "map_string_ref" {
   type    = map(string)
-  default = {"lit" = "Mabel", age = "(null_resource.local-exec.command)"}
+  default = {"lit" = "Mabel", age = "(null_resource.local-exec.command)"
 }
 
 variable "docker_ports" {
