@@ -1,5 +1,45 @@
 # Configure these variables
 
+
+variable "docker_ports" {
+  type = list(map({
+    internal = number
+    external = number
+    protocol = string
+  }))
+  default = [
+    {
+      internal = 8300
+      external = 8300
+      protocol = "tcp"
+    },
+    {
+      internal = 8301
+      external = 8301
+      protocol = "ldp"
+    }
+  ]
+}
+
+
+variable "nested_tuple" {
+  type    = tuple(string, list(string), number, bool)
+  default = ["hello",["hi"], 34.5, false]
+}
+
+
+variable "availability_zone_names" {
+  type    = list(strings)
+  default = ["blue-horizon", "mgm-grand", "madison-square-garden"]
+}
+
+
+variable "can_sleep" {
+  description = "If I can sleep"
+  type = boolean
+  default     = false
+}
+
 variable "sample_var" {
   description = "A sample var to pass to the template."
   default     = "hello"
@@ -16,12 +56,6 @@ variable "number_auto" {
   default     = 100
 }
 
-variable "can_sleep" {
-  description = "If I can sleep"
-  type = bool
-  default     = false
-}
-
 variable "can_sleep_auto" {
   description = "If I can sleep"
   default     = false
@@ -32,12 +66,6 @@ variable "rocky_balboa" {
   type = string
   default = "BOXING_ROCK"
 }
-
-variable "availability_zone_names" {
-  type    = list(string)
-  default = ["blue-horizon", "mgm-grand", "madison-square-garden"]
-}
-
 
 variable "any_list" {
   type    = list
@@ -79,36 +107,10 @@ variable "map_string_ref" {
   default = {"lit" = "Mabel", age = "(null_resource.local-exec.command)"}
 }
 
-variable "docker_ports" {
-  type = list(object({
-    internal = number
-    external = number
-    protocol = string
-  }))
-  default = [
-    {
-      internal = 8300
-      external = 8300
-      protocol = "tcp"
-    },
-    {
-      internal = 8301
-      external = 8301
-      protocol = "ldp"
-    }
-  ]
-}
-
 variable "simple_tuple" {
   type    = tuple([string, string, number, bool])
   default = ["hello","hi", 34.5, false]
 }
-
-variable "nested_tuple" {
-  type    = tuple([string, list(string), number, bool])
-  default = ["hello",["hi"], 34.5, false]
-}
-
 
 variable "heavy_nested_tuple" {
   type    = tuple([string, tuple([string, bool]), list(string), object({
