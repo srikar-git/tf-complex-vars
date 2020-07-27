@@ -1,3 +1,9 @@
+
+variable "zones" {
+  type = "list"
+  default = ["us-east-1a", "us-east-1b"]
+}
+
 variable "iftodo" {
   type = "string"
 }
@@ -8,11 +14,6 @@ variable "images" {
   default = {
     howmany = "2"
   }
-}
-
-variable "zones" {
-  type = "list"
-  default = ["us-east-1a", "us-east-1b"]
 }
 
 
