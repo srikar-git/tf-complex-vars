@@ -49,16 +49,6 @@ variable "test_any_list" {
   default = ["blue-horizon", "mgm-grand", "madison-square-garden"]
 }
 
-variable "test_nest_list" {
-  type    = list(list(string))
-  default = [["blue-horizon", "mgm-grand"], ["madison-square-garden"]]
-}
-
-variable "no_type_constraint" {
-  type = any
-  default = 78
-}
-
 variable "map_simple" {
   type    = map(number)
   default = {name = 78, age = 52}
