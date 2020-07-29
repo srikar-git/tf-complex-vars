@@ -1,3 +1,8 @@
+module "consul" {
+  #source  = "https://juppad23@github.ibm.com/juppad23/schematics_test_1.git"
+  source  = "git::https://hkantare@github.com/hkantare/test-private.git"
+}
+
 # Create an arbitrary local resource
 data "template_file" "test" {
   template = "Hello, I am a template. My sample_var value = $${sample_var}"
