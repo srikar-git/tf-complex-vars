@@ -85,18 +85,6 @@ variable "docker_ports" {
     external = number
     protocol = string
   }))
-  default = [
-    {
-      internal = 8300
-      external = 8300
-      protocol = "tcp"
-    },
-    {
-      internal = 8301
-      external = 8301
-      protocol = "ldp"
-    }
-  ]
 }
 
 variable "simple_tuple" {
