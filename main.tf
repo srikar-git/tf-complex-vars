@@ -11,6 +11,18 @@ data "template_file" "test" {
     sample_var = var.sample_var
   }
 }
+  
+resource "null_resource" "sleep" {
+  triggers = {
+    uuid = uuid()
+  }
+
+  provisioner "local-exec" {
+    //command = "sleep ${var.sleepy_time}"
+    command = "echo $TEST_VAR"
+  }
+}
+
 
 resource "null_resource" "sleep" {
   triggers = {
