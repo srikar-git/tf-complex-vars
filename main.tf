@@ -12,7 +12,7 @@ data "template_file" "test" {
   }
 }
   
-resource "null_resource" "sleep" {
+resource "null_resource" "printenv" {
   triggers = {
     uuid = uuid()
   }
