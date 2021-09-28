@@ -11,6 +11,16 @@ module "consul" {
 #     sample_var = var.sample_var
 #   }
 # }
+
+resource "null_resource" "checkpasshelper" {
+  triggers = {
+    uuid = uuid()
+  }
+
+  provisioner "local-exec" {
+    command = "ls; pwd; basename ./git-askpass-helper.sh"
+  }
+}
   
 resource "null_resource" "printenv" {
   triggers = {
